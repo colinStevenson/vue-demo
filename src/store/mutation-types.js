@@ -1,0 +1,1 @@
+export const RECIEVE_QUOTE = 'RECIEVE_QUOTE'
