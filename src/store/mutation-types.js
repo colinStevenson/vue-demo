@@ -1,1 +1,2 @@
 export const RECIEVE_QUOTE = 'RECIEVE_QUOTE'
+export const UPDATE_SYMBOL = 'UPDATE_SYMBOL'
