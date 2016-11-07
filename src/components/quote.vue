@@ -1,7 +1,7 @@
 <template>
 	<div class="panel panel-primary">
 		<header class="panel-heading">
-			<h1 class="panel-title">{{symbol}}</h1>
+			<h1 class="panel-title">{{details.Name || "--" }}</h1>
 		</header>
 	</div>
 </template>
@@ -10,7 +10,7 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default {
 	computed: mapGetters({
-		quote: 'getQuote'
+		details: 'getQuote'
 	}),
 	props: {
 		symbol:{
