@@ -4,7 +4,7 @@
     <main class="container" id="app">
       <h1 class="page-title">{{details.Name}}</h1>
       <page-nav></page-nav>
-      <router-view></router-view>
+      <router-view default="overview"></router-view>
     </main>
   </div>
 </template>
@@ -20,7 +20,11 @@ export default {
   name: 'app',
   components: { SiteNavbar, Overview, PageNav }, 
   computed: mapGetters({
-    details: 'quoteDetails'
-  })
+    details: 'quoteDetails',
+    symbol: 'symbol'
+  }),
+  created() {
+		this.$store.dispatch('getQuote', this.symbol)
+	}
 }
 </script>

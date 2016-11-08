@@ -20,6 +20,14 @@ export default {
 </script>
 <style>
     .navbar-brand{
+        background: #000;
+        border-radius: 999px;
+        line-height: 40px;
+        width: 40px;
+        height: 40px;
         font-size: 24px;
+        padding: 0;
+        text-align: center;
+        margin-top: 10px;
     }
 </style>

@@ -10,11 +10,7 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default {
 	computed: mapGetters({
-		details: 'quoteDetails',
-		symbol: 'symbol'
-	}),
-	created() {
-		this.$store.dispatch('getQuote', this.symbol)
-	}
+		details: 'quoteDetails'
+	})
 }
 </script>

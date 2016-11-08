@@ -8,11 +8,13 @@ import store from './store'
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/overview', component: Overview },
-  { path: '/ratings', component: Ratings }
+  { name: 'overview',  path: '/overview', component: Overview },
+  { path: '/ratings', component: Ratings },
+  { path: '*', redirect: '/overview'}
 ]
 
 const router = new VueRouter({ routes })
+
 
 new Vue({
   el: '#app',
