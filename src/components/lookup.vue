@@ -1,5 +1,5 @@
 <template>
-	<div class="form-inline well">
+	<div class="navbar-form navbar-right">
 		<div class="form-group">
 			<input v-model="inputSymbol" type="text" class="form-control" placeholder="Search">
 		</div>

@@ -22,7 +22,6 @@ export default {
 			return response.json()
 		})
 		.then(function(json){
-			console.log(json)
 			cb(json.Data)
 		})
 		// setTimeout(() => cb(_quotes[symbol] || {}), 100)

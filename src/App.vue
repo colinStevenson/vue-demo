@@ -1,27 +1,26 @@
 <template>
-  <div class="container" id="app">
-    <h1 class="page-header">{{ msg }}</h1>
-    <lookup></lookup>
-    <quote symbol="GE"></quote>
+  <div>
+    <site-navbar></site-navbar>
+    <main class="container" id="app">
+      <h1 class="page-title">{{details.Name}}</h1>
+      <page-nav></page-nav>
+      <router-view></router-view>
+    </main>
   </div>
 </template>
 
 <script>
 
-import Quote from "./components/quote.vue"
-import Lookup from "./components/lookup.vue"
+import SiteNavbar from "./components/site-navbar.vue"
+import Overview from "./components/overview.vue"
+import PageNav from "./components/page-nav.vue"
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'app',
-  components: { Quote,  Lookup },
-  data () {
-    return {
-      msg: 'Vue Demo'
-    }
-  }
+  components: { SiteNavbar, Overview, PageNav }, 
+  computed: mapGetters({
+    details: 'quoteDetails'
+  })
 }
 </script>
-
-<style>
-
-</style>
