@@ -5,3 +5,15 @@
         </div>
     </div>
 </template>
+
+<script>
+import auth from '../auth'
+export default {
+    name: "ratings",
+    route: {
+        canActivate(){
+            return auth.user.authenticated
+        }
+    }
+}
+</script>
