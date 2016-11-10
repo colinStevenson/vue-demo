@@ -1,6 +1,6 @@
 var express = require('express'),
     _       = require('lodash'),
-    config  = require('./config'),
+    config  = require('../config'),
     jwt     = require('jsonwebtoken');
 
 var app = module.exports = express.Router();
@@ -10,6 +10,10 @@ var users = [{
   id: 1,
   username: 'gonto',
   password: 'gonto'
+}, {
+  id: 2,
+  username: 'colin',
+  password: 'colin'
 }];
 
 function createToken(user) {
