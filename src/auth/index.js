@@ -11,7 +11,7 @@ export default {
   },
 
   login(context, creds, redirect) {
-    context.$http.post(LOGIN_URL, creds, (data) => {
+    context.$http.post(LOGIN_URL, creds).then((data) => {
 
       localStorage.setItem('id_token', data.id_token)
 
@@ -21,7 +21,7 @@ export default {
         router.go(redirect)
       }
 
-    }, (err) => {
+    }).error((err) => {
       context.error = err
     })
   },

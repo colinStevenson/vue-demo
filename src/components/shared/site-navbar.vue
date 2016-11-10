@@ -18,7 +18,7 @@
                     <router-link  to="/signup">Sign Up</router-link>
                 </li>
                 <li v-if="user.authenticated">
-                    <a v-link="'login'" @click="logout()">Logout</a>
+                    <a to="/login" @click="logout()">Logout</a>
                 </li>
             </ul>
         </div>
