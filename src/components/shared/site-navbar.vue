@@ -18,7 +18,7 @@
                     <router-link  to="/signup">Sign Up</router-link>
                 </li>
                 <li v-if="user.authenticated">
-                    <a to="/login" @click="logout()">Logout</a>
+                    <a href="#" @click="logout()">Logout</a>
                 </li>
             </ul>
         </div>
@@ -55,10 +55,8 @@ export default {
         text-align: center;
         margin-top: 10px;
     }
-    .navbar-nav > li > .router-link-active{
-        
+    .navbar-nav > li > .router-link-active{    
         background-color: #15a589;
         cursor: default;
-        
     }
 </style>

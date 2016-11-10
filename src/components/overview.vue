@@ -1,5 +1,5 @@
 <template>
-	<div class="panel panel-default">
+	<div class="panel panel-default" v-bind:class="{ loading: loading }">
 		<header class="panel-heading">
 			<h1 class="panel-title">
 				{{details.Name}}
@@ -17,10 +17,16 @@ export default {
 	name: "Overview",
 	computed: mapGetters({
 		details: 'quoteDetails',
-		symbol: 'symbol'
+		symbol: 'symbol',
+		loading: 'loading'
 	}),
 	created() {
 		this.$store.dispatch('getQuote', this.symbol)
 	}
 }
 </script>
+<style>
+	.panel.loading{
+		opacity: 0.3;
+	}
+</style>

@@ -1,5 +1,5 @@
 var express = require('express'),
-    quoter  = require('./quoter');
+    quoter  = require('../quoter');
 
 var app = module.exports = express.Router();
 

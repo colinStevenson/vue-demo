@@ -27,11 +27,11 @@ export default {
   },
 
   signup(context, creds, redirect) {
-    context.$http.post(SIGNUP_URL, creds, (data) => {
+    context.$http.post(SIGNUP_URL, creds).then((data) => {
       localStorage.setItem('id_token', data.id_token)
 
       this.user.authenticated = true
-
+      
       if(redirect) {
         router.go(redirect)
       }
