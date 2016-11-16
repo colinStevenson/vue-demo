@@ -1,4 +1,5 @@
 import * as types from '../mutation-types'
+import quote from '../../api/quote'
 
 // initial state
 const state = {
@@ -19,6 +20,18 @@ const getters = {
   }
 }
 
+const actions = {
+  getQuote ({ commit }, symbol) {
+    quote.getQuote( symbol, quote => {
+      commit(types.RECIEVE_QUOTE, {quote})
+    })
+  }, 
+  setSymbol ({ commit, state, dispatch }, symbol) {
+    commit(types.UPDATE_SYMBOL, symbol)
+    dispatch('getQuote', symbol)
+  }
+}
+
 const mutations = {
 	[types.RECIEVE_QUOTE] (state, { quote }) {
 		state.details = quote
@@ -33,5 +46,6 @@ const mutations = {
 export default {
   state,
   getters,
+  actions,
   mutations
 }
